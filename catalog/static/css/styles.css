@@ -1,0 +1,384 @@
+
+
+/*
+
+    Basics
+
+*/
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+p, h1, a, li, textarea, #submit-button, .button { 
+    font-family: franklin-gothic-atf, sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #343434;
+}
+
+p, a, li {
+    font-size: 20px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+section {
+    width: 100vw;
+}
+
+.header {
+    height: 200px;
+}
+
+.margin {
+    width: 100%;
+    justify-content: flex-start;
+}
+
+
+.center {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+.content {
+    width: 550px;
+}
+
+.content-center {
+    align-self: center;
+}
+
+.full-height {
+    min-height: 70vh;
+}
+
+.button {
+    font-size: 20px;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    background-color: orange;
+    color:white;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,.2);
+    cursor: pointer;
+    width:200px;
+    margin:10px;
+}
+
+.button-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+}
+  
+  .button-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+
+
+
+/*
+
+  Site-wide
+
+*/
+
+.page {
+    display: grid;
+    grid-auto-columns: 200px 1fr;
+    width: 100vw;
+    min-height: 100vh;
+    justify-content: flex-start;
+}
+
+
+.page-sidebar {
+    grid-column: 1;
+    min-height: 100vh;
+    width:100%;
+    background-color: #efefef;
+}
+
+.page-content {
+    grid-column: 2;
+    height: 100vh;
+    overflow:auto;
+    padding: 2em;
+    width:100%;
+    padding-top: 80px;
+}
+
+
+/*
+
+    Sidebar
+
+*/
+
+
+
+
+
+.sidebar-nav {
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+    line-height:20px;
+    padding-top: 100px;
+}
+
+.greeting {
+    text-transform: capitalize;
+    font-weight: 400;
+    margin-bottom:10px;
+}
+
+.option {
+    line-height: 40px;
+}
+
+.account {
+    padding-top: 15px;
+    font-weight:400;
+}
+
+
+
+
+
+
+
+
+/*
+
+    note lists 
+
+*/
+
+.note-info p {
+    display: inline;
+}
+.note-info {
+    line-height: 40px;
+}
+
+
+
+
+
+
+/*
+
+    Note Editor
+
+*/
+
+.editor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-gap: 40px;
+    align-items: center;
+    justify-content: center;
+    margin:20px;
+}
+
+.col1, .col2 {
+    width:100%;
+    justify-self: center;
+    display: grid;
+    justify-content: center;
+}
+
+.col1 {
+    grid-column: 1;
+}
+
+
+.title, #title {
+    font-family: parkside, cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    color: #7bca7f;
+    text-transform: capitalize;
+}
+
+
+.notetitle {
+    border:none;
+    outline: none;
+    resize: none;
+    overflow: visible;
+    width:100%;
+}
+
+.by {
+    text-transform: capitalize;
+}
+
+.content-title {
+    border-bottom: 1px solid #ccc;
+}
+
+.notebody {
+    width:100%;
+    min-height: 70vh;
+    border:none;
+    color: #343434;
+    outline: none;
+    resize: none;
+    overflow: auto;
+    border-bottom: 1px solid #ccc;
+}
+
+
+#submit-button {
+    font-size: 20px;
+    width: 150px;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    background-color: orange;
+    color:white;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,.2);
+    cursor: pointer;
+    margin-bottom: 60px;
+}
+
+#output {
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,.2);
+}
+
+.image-section {
+    overflow: auto;
+    margin: 30px 0;
+    max-height:70vh;
+}
+
+
+/* 
+
+    login
+
+*/
+.login {
+    padding:20px;
+    min-height:300px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    display: grid;
+    align-items: center;
+    
+}
+
+.login-splash {
+    height:100vh;
+    background-color: #222;
+}
+
+.login-form {
+    display: grid;
+    width:100%;
+    
+}
+
+.button-center {
+    margin-top: 60px;
+    justify-self: center;
+}
+
+.login-field {
+    padding:10px;
+    margin:10px;
+    border:1px solid black;
+    border-radius: 100px;
+    width: 300px;
+    background-color: #efefef;
+    outline:none;
+    
+}
+
+.login-text{
+    color: white;
+}
+
+.site-title {
+    font-size:80px;
+}
+
+
+
+/*
+
+    Queries
+
+*/
+@media only screen and (max-width: 800px) {
+
+    .page{
+        grid-auto-columns: 100vw;
+    }
+
+    .page-sidebar {
+        width:100vw;
+        min-height:200px;
+        text-align: center;
+    }
+
+    .sidebar-nav li {
+        padding: 20px;
+    }
+
+    .page-content {
+        grid-column: 1;
+        overflow: visible;
+        width: 100vw;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+
+
+    .title {
+        text-align: center;
+    }
+
+    .note-info {
+        margin: 30px;
+    }
+
+
+    .editor-grid {
+        display: inline;
+    }
+
+}

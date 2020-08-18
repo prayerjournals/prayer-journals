@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1 class = "title">All Notes:</h1>
+  {% if note_list %}
+  <ul>
+    {% for note in note_list %}
+      <li class="note-info">
+        <a class="note-row" href="{{ note.get_absolute_url }}">
+          <p>{{ note.title }}</p>  
+          <p>&mdash; {{ note.date }}</p>
+          <p>&mdash; {{ note.user }}</p>
+        </a>        
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>Hmmm... Seems like you haven't taken any notes</p>
+    <p>Try adding a note by pressing <strong>"add note"</strong> on the sidebar</p>
+  {% endif %}       
+{% endblock %}

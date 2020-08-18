@@ -1,0 +1,27 @@
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+{% load widget_tweaks %}
+ 
+    <!-- title and body fields -->
+    <section class="flex">
+        <div class="margin flex">
+            <div class="content">
+                
+                <h1 class = "notetitle title"> {{ note.title }} </h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="flex">
+        <div class="margin flex">
+            <div class="content">
+                
+                <p class = "body notebody" > {{ note.body }} </p>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}

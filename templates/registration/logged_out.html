@@ -1,0 +1,10 @@
+{% extends "account_base.html" %}
+
+{% block content %}
+  <div class="login content center login-text center">
+    <h1 class="title center">Logged out!</h1>  
+    <a class="login-text" href="{% url 'login'%}">Click here to login again.</a>
+  </div>
+{% endblock %}
+
+http://127.0.0.1:8000/accounts/logout/?next=/catalog/view-note/23

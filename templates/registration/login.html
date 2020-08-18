@@ -1,0 +1,36 @@
+{% extends "account_base.html" %}
+
+
+{% block content %}
+<div class="login content center login-text">
+  {% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+  {% endif %}
+  <h1 class="title center">Login</h1>
+  {% if next %}
+    {% if user.is_authenticated %}
+      <p>Your account doesn't have access to this page. To proceed,
+      please login with an account that has access.</p>
+    {% else %}
+    {% endif %}
+  {% endif %}
+        
+  <form class="login-form" method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    {% load widget_tweaks %}
+    <table class="center">
+      <tr>
+        <td>{{ form.username|add_class:"login-field" }}</td>
+      </tr>
+      <tr>
+        <td>{{ form.password|add_class:"login-field" }}</td>
+      </tr>
+    </table>
+    <input class="button button-center" type="submit" value="login" />
+    <input type="hidden" name="next" value="{{ next }}" />
+   </form>
+        
+  {# Assumes you setup the password_reset view in your URLconf #}
+  <p class="center "><a class="login-text" href="{% url 'password_reset' %}">Lost password?</a></p>
+</div>
+{% endblock %}

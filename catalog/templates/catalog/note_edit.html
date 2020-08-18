@@ -1,0 +1,54 @@
+
+{% extends "base_generic.html" %}
+
+
+{% block content %}
+
+<form id="note_form" method="post" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% load widget_tweaks %}
+
+
+    <!-- Does not show up -->
+    {% csrf_token %}
+    {% for hidden in noteForm.hidden_fields %}
+        {{ hidden }}
+    {% endfor %}
+
+
+ 
+    <!-- title, body, images, and submit  -->
+
+    <div class="editor-grid">
+        <div class="col1">
+            <div class="content content-title">
+                <h1 id = "title"> {{ noteForm.title|add_class:"notetitle title" }} </h1>
+                {% if note.user %}
+                    <p class='by'> - by {{ note.user }}</p>
+                {% endif %}
+            </div>  
+    
+            <div class="content ">
+                <p id = "body" > {{ noteForm.body|add_class:"notebody" }} </p>
+            </div>
+        </div>
+    
+        <div class="col2">
+            <div class="content flex image-section center">
+                <p> {{ noteForm.image1 }} </p>
+                {% if note.image1 %}
+                    <img src="{{ note.image1.url }}" alt="" width = 500/>
+                {% endif %}
+            </div>
+        </div>
+                
+        <div class="col1">
+            <div class="content center">
+                <input id="submit-button" type="submit" name="submit" value="Save Note" />
+            </div>
+        </div> 
+    </div>     
+
+</form>
+
+{% endblock %}
